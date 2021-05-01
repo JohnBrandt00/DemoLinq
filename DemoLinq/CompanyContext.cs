@@ -14,9 +14,14 @@ namespace DemoLinq.Context
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Department> Departments { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlite(@"Data Source=C:\Users\notjo\Source\Repos\DemoLinq\DemoLinq\work.db");
+        //}
+
+        public CompanyContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
         {
-            optionsBuilder.UseSqlite(@"Data Source=C:\Users\notjo\source\repos\FinalProject\DemoLinq\DemoLinq\work.db");
+
         }
 
     }
