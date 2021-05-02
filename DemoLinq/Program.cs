@@ -97,7 +97,7 @@ namespace DemoLinq
             bool quit = true;
             while (quit) 
                 {
-                Console.WriteLine("1: Print Tables\n 2: Get Employee By Name \n 3: Get Employees of Manager\n 4: Get Employees of department");
+                Console.WriteLine("1: Print Tables\n 2: Get Employee By Name \n 3: Get Employees of Manager\n 4: Get Employees of department\n 5: Add new employee");
 
                     switch (Console.ReadKey().Key)
                     {
@@ -120,8 +120,13 @@ namespace DemoLinq
                         depse.employees.ForEach(e => Console.WriteLine(e));
                         
                         break;
+                    case (ConsoleKey.D5):
+                        Console.Clear();
+                        AddEmployee(factory);
 
-        
+                        break;
+
+
                     default:
                         Console.WriteLine("Not an option");
                         break;
